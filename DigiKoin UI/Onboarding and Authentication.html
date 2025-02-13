@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DigiKoin Authentication</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background: url('file:///C:/Users/Sandz/Pictures/Saved Pictures/Gold Bullion (10).jpeg') no-repeat center center fixed;
+            background-size: cover;
+            color: white; /* Change font color to white */
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .header {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.8);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            justify-content: space-between; /* Adjust to place elements at opposite ends */
+        }
+        .header .logo {
+            width: 50px;
+            margin-left: 20px;
+        }
+        .header h1 {
+            margin: 0;
+            color: white;
+            font-size: 24px;
+            margin-right: auto; /* Align logo and heading to the left */
+        }
+        nav {
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 10px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 70px; /* Place navbar immediately below the header */
+            left: 0;
+            z-index: 1000;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center; /* Center the tabs */
+            align-items: center;
+        }
+        nav ul li {
+            display: inline;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: white; /* Change font color to white */
+            padding: 10px 15px; /* Adjust padding for narrower tabs */
+            font-size: 16px;
+            border-radius: 5px;
+            margin: 0 5px; /* Reduce spacing between tabs */
+        }
+        nav ul li a:hover {
+            background-color: #FFA500; /* Orange color */
+        }
+        .container {
+            max-width: 500px;
+            padding: 30px;
+            border-radius: 10px;
+            background: rgba(0, 0, 0, 0.5);
+            margin-top: 150px; /* Add margin to avoid overlap with navbar */
+        }
+        input[type="text"], input[type="password"], input[type="email"], input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background: rgba(255, 255, 255, 0.8);
+            color: #000;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #FFA500; /* Orange color */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px 5px;
+        }
+        button:hover {
+            background-color: #FF8C00; /* Darker orange on hover */
+        }
+        .heading {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="file:///C:/Users/Sandz/Downloads/Gorilla.jpeg" alt="DigiKoin Logo" class="logo">
+        <h1>DigiKoin</h1>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="C:/Users/Sandz/Documents/DigiKoin UI/Dashboard (Home screen).html">Home</a></li>
+            <li><a href="C:/Users/Sandz/Documents/DigiKoin UI/Buy and Sell.html">Buy & Sell Gold</a></li>
+            <li><a href="C:/Users/Sandz/Documents/DigiKoin UI/Wallet and Transaction History.html">Wallet & Transaction History</a></li>
+            <li><a href="C:/Users/Sandz/Documents/DigiKoin UI/Gold Storage and Provenace Tracking.html">Gold Storage & Tracking</a></li>
+            <li><a href="C:/Users/Sandz/Documents/DigiKoin UI/Profile and Settings.html">Profile & Settings</a></li>
+        </ul>
+    </nav>
+    <!-- Welcome Screen -->
+    <div class="container" id="welcome">
+        <h1 class="heading">Welcome to DigiKoin</h1>
+        <p>Mining Africa's Gold. Empowering Digital Wealth</p>
+        <button onclick="showAuth()">Get Started</button>
+    </div>
+
+    <!-- Sign Up / Login -->
+    <div class="container" id="auth" style="display:none;">
+        <h1 class="heading">DigiKoin</h1>
+        <h2>Sign Up / Login</h2>
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <button onclick="authenticate()">Submit</button>
+        <p>Or login with:</p>
+        <button>Google</button>
+        <button>Apple</button>
+        <button>MetaMask</button>
+        <div class="nav-buttons">
+            <button onclick="showWelcome()">Back</button>
+            <button onclick="showKYC()">Next</button>
+        </div>
+    </div>
+
+    <!-- KYC Verification -->
+    <div class="container" id="kyc" style="display:none;">
+        <h1 class="heading">DigiKoin</h1>
+        <h2>KYC Verification</h2>
+        <input type="file" id="govID" required>
+        <input type="file" id="facialRec" required>
+        <button onclick="verifyKYC()">Verify</button>
+        <div class="nav-buttons">
+            <button onclick="showAuth()">Back</button>
+        </div>
+    </div>
+
+    <script>
+        function toggleMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+
+        function showAuth() {
+            document.getElementById('welcome').style.display = 'none';
+            document.getElementById('auth').style.display = 'block';
+            document.getElementById('kyc').style.display = 'none';
+        }
+        
+        function showWelcome() {
+            document.getElementById('auth').style.display = 'none';
+            document.getElementById('welcome').style.display = 'block';
+        }
+        
+        function authenticate() {
+            // Add your authentication logic here
+            document.getElementById('auth').style.display = 'none';
+            document.getElementById('kyc').style.display = 'block';
+        }
+        
+        function showKYC() {
+            document.getElementById('auth').style.display = 'none';
+            document.getElementById('kyc').style.display = 'block';
+        }
+        
+        function verifyKYC() {
+            // Add your KYC verification logic here
+            alert('KYC Verification in progress');
+        }
+    </script>
+</body>
+</html>

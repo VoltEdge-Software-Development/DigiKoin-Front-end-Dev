@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile & Settings</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background: url('file:///C:/Users/Sandz/Pictures/Saved Pictures/Gold Bullion (10).jpeg') no-repeat center center fixed;
+            background-size: cover;
+            color: white; /* Change font color to white */
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .header {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.8);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            justify-content: space-between; /* Adjust to place elements at opposite ends */
+        }
+        .header .logo {
+            width: 50px;
+            margin-left: 20px;
+        }
+        .header h1 {
+            margin: 0;
+            color: white;
+            font-size: 24px;
+            margin-right: auto; /* Align logo and heading to the left */
+        }
+        nav {
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 10px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 70px; /* Place navbar immediately below the header */
+            left: 0;
+            z-index: 1000;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center; /* Center the tabs */
+            align-items: center;
+        }
+        nav ul li {
+            display: inline;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: white; /* Change font color to white */
+            padding: 10px 15px; /* Adjust padding for narrower tabs */
+            font-size: 16px;
+            border-radius: 5px;
+            margin: 0 5px; /* Reduce spacing between tabs */
+        }
+        nav ul li a:hover {
+            background-color: #FFA500; /* Orange color */
+        }
+        .container {
+            width: 90%;
+            max-width: 800px;
+            padding: 30px;
+            border-radius: 10px;
+            background: rgba(0, 0, 0, 0.6);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            color: white;
+            margin-top: 150px; /* Add margin to avoid overlap with navbar */
+        }
+        .section {
+            margin: 20px 0;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            color: white;
+        }
+        h2 {
+            margin-top: 0;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #FFA500; /* Orange color */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px 0;
+        }
+        button:hover {
+            background-color: #FF8C00; /* Darker orange on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="file:///C:/Users/Sandz/Downloads/Gorilla.jpeg" alt="DigiKoin Logo" class="logo">
+        <h1>DigiKoin</h1>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="C:/Users/Sandz/Documents/DigiKoin UI/Dashboard (Home screen).html">Home</a></li>
+            <li><a href="C:/Users/Sandz/Documents/DigiKoin UI/Buy and Sell.html">Buy & Sell Gold</a></li>
+            <li><a href="C:/Users/Sandz/Documents/DigiKoin UI/Wallet and Transaction History.html">Wallet & Transaction History</a></li>
+            <li><a href="C:/Users/Sandz/Documents/DigiKoin UI/Gold Storage and Provenace Tracking.html">Gold Storage & Tracking</a></li>
+            <li><a href="C:/Users/Sandz/Documents/DigiKoin UI/Profile and Settings.html">Profile & Settings</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <!-- User Info Section -->
+        <div class="section">
+            <h2>User Info</h2>
+            <p><strong>Name:</strong> Sandzile </p>
+            <p><strong>ID Verification Status:</strong> Verified</p>
+        </div>
+
+        <!-- Security Settings Section -->
+        <div class="section">
+            <h2>Security Settings</h2>
+            <button onclick="changePassword()">Change Password</button>
+            <button onclick="enable2FA()">Enable 2FA</button>
+            <button onclick="setupBiometricLogin()">Setup Biometric Login</button>
+        </div>
+
+        <!-- Notification Center Section -->
+        <div class="section">
+            <h2>Notification Center</h2>
+            <p><strong>Price Alerts:</strong> Enabled</p>
+            <p><strong>Transaction Updates:</strong> Enabled</p>
+            <button onclick="manageNotifications()">Manage Notifications</button>
+        </div>
+    </div>
+
+    <script>
+        function changePassword() {
+            alert('Change Password feature coming soon!');
+        }
+
+        function enable2FA() {
+            alert('Enable 2FA feature coming soon!');
+        }
+
+        function setupBiometricLogin() {
+            alert('Setup Biometric Login feature coming soon!');
+        }
+
+        function manageNotifications() {
+            alert('Manage Notifications feature coming soon!');
+        }
+    </script>
+</body>
+</html>
