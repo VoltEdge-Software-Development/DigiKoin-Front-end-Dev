@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DigiKoin Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background: url('file:///C:/Users/Sandz/Pictures/Saved Pictures/Gold Bullion (10).jpeg') no-repeat center center fixed;
+            background-size: cover;
+            color: white; /* Change font color to white */
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .header {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.8);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            justify-content: space-between; /* Adjust to place elements at opposite ends */
+        }
+        .header .logo {
+            width: 50px;
+            margin-left: 20px;
+        }
+        .header h1 {
+            margin: 0;
+            color: white;
+            font-size: 24px;
+            margin-right: auto; /* Align logo and heading to the left */
+        }
+        nav {
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 10px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 70px; /* Place navbar immediately below the header */
+            left: 0;
+            z-index: 1000;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center; /* Center the tabs */
+            align-items: center;
+        }
+        nav ul li {
+            display: inline;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: white; /* Change font color to white */
+            padding: 10px 15px; /* Adjust padding for narrower tabs */
+            font-size: 16px;
+            border-radius: 5px;
+            margin: 0 5px; /* Reduce spacing between tabs */
+        }
+        nav ul li a:hover {
+            background-color: #FFA500; /* Orange color */
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            padding: 30px;
+            border-radius: 10px;
+            background: rgba(0, 0, 0, 0.6);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            color: white;
+            margin-top: 150px; /* Add margin to avoid overlap with navbar */
+        }
+        .total-balance, .live-gold-chart, .quick-actions, .recent-transactions {
+            margin: 20px 0;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            color: white;
+        }
+        h2 {
+            margin-top: 0;
+        }
+        .balance-details, .quick-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .quick-actions button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #FFA500; /* Orange color */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 0 10px;
+            flex: 1;
+        }
+        .quick-actions button:hover {
+            background-color: #FF8C00; /* Darker orange on hover */
+        }
+        .recent-transactions table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .recent-transactions table, th, td {
+            border: 1px solid #ddd;
+        }
+        .recent-transactions th {
+            background-color: gray; /* Gray background for title row */
+            color: white;
+        }
+        .recent-transactions td {
+            padding: 10px;
+            text-align: left;
+            background-color: rgba(255, 255, 255, 0.1); /* Clear rows */
+        }
+        @media (max-width: 768px) {
+            .balance-details, .quick-actions {
+                flex-direction: column;
+            }
+            .quick-actions button {
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="file:///C:/Users/Sandz/Downloads/Gorilla.jpeg" alt="DigiKoin Logo" class="logo">
+        <h1>DigiKoin</h1>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="C:/Users/Sandz/Documents/DigiKoin UI/Dashboard (Home screen).html">Home</a></li>
+            <li><a href="C:/Users/Sandz/Documents/DigiKoin UI/Buy and Sell.html">Buy & Sell Gold</a></li>
+            <li><a href="C:/Users/Sandz/Documents/DigiKoin UI/Wallet and Transaction History.html">Wallet & Transaction History</a></li>
+            <li><a href="C:/Users/Sandz/Documents/DigiKoin UI/Gold Storage and Provenace Tracking.html">Gold Storage & Tracking</a></li>
+            <li><a href="C:/Users/Sandz/Documents/DigiKoin UI/Profile and Settings.html">Profile & Settings</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <!-- Total Balance Section -->
+        <div class="total-balance">
+            <h2>Total Balance</h2>
+            <div class="balance-details">
+                <p><strong>Gold Holdings:</strong> 100 grams</p>
+                <p><strong>Equivalent USD Value:</strong> $5000</p>
+            </div>
+        </div>
+        
+        <!-- Live Gold Price Chart Section -->
+        <div class="live-gold-chart">
+            <h2>Live Gold Price Chart</h2>
+            <!-- You can embed a live chart here using an API or library -->
+            <p>Real-time gold price data goes here.</p>
+        </div>
+        
+        <!-- Quick Actions Section -->
+        <div class="quick-actions">
+            <button>Buy Gold</button>
+            <button>Sell Gold</button>
+            <button>Transfer</button>
+            <button>Withdraw</button>
+        </div>
+        
+        <!-- Recent Transactions Section -->
+        <div class="recent-transactions">
+            <h2>Recent Transactions</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Type</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2025-02-10</td>
+                        <td>Buy</td>
+                        <td>Completed</td>
+                    </tr>
+                    <tr>
+                        <td>2025-02-09</td>
+                        <td>Sell</td>
+                        <td>Pending</td>
+                    </tr>
+                    <tr>
+                        <td>2025-02-08</td>
+                        <td>Transfer</td>
+                        <td>Completed</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
